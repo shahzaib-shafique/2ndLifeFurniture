@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // <-- add this
+import { Link } from "react-router-dom"; 
 import MinimalHeader from "./MinimalHeader";
 
 const SignIn = () => {

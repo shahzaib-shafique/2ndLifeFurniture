@@ -19,7 +19,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on link click
+ 
   const handleLinkClick = () => setOpen(false);
 
   return (
@@ -29,7 +29,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
-        {/* Logo */}
+     
         <Link
           to="/"
           className={`text-2xl md:text-3xl font-extrabold tracking-wide transition-colors duration-300 ${
@@ -39,7 +39,7 @@ const Navbar = () => {
           2nd Life <span className="text-green-600">Furniture</span>
         </Link>
 
-        {/* Desktop Links */}
+     
         <ul className="hidden md:flex items-center gap-10 font-medium transition-colors duration-300">
           {navLinks.map((link) => (
             <li key={link.name}>
@@ -60,7 +60,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Desktop Buttons */}
         <div className="hidden md:flex gap-4 items-center">
           <Link to="/signin">
             <button
@@ -80,7 +79,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+      
         <button
           onClick={() => setOpen(!open)}
           className={`md:hidden transition-colors duration-300 ${
@@ -91,7 +90,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+     
       <div
         className={`md:hidden fixed top-16 left-0 w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
           open ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0 pointer-events-none"
@@ -102,7 +101,7 @@ const Navbar = () => {
             <li key={link.name}>
               <Link
                 to={link.href}
-                onClick={handleLinkClick} // Close menu on click
+                onClick={handleLinkClick}
                 className={`block transition-colors duration-300 ${
                   location.pathname === link.href
                     ? "text-green-600 font-semibold"
