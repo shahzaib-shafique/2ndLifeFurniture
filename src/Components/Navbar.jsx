@@ -6,6 +6,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === "/";
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -19,28 +20,27 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- 
   const handleLinkClick = () => setOpen(false);
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-transparent"
+        scrolled || !isHome ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
-     
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
+        {/* Brand */}
         <Link
           to="/"
-          className={`text-2xl md:text-3xl font-extrabold tracking-wide transition-colors duration-300 ${
-            scrolled ? "text-gray-900" : "text-white"
+          className={`text-2xl lg:text-3xl font-extrabold tracking-wide whitespace-nowrap transition-colors duration-300 ${
+            scrolled || !isHome ? "text-gray-900" : "text-white"
           }`}
         >
           2nd Life <span className="text-green-600">Furniture</span>
         </Link>
 
-     
-        <ul className="hidden md:flex items-center gap-10 font-medium transition-colors duration-300">
+        {/* Desktop Links */}
+        <ul className="hidden md:flex items-center gap-12 font-medium">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
@@ -48,23 +48,24 @@ const Navbar = () => {
                 className={`relative group transition-colors duration-300 ${
                   location.pathname === link.href
                     ? "text-green-600 font-semibold"
-                    : scrolled
+                    : scrolled || !isHome
                     ? "text-gray-700"
                     : "text-white"
                 }`}
               >
-                <span className="hover:text-green-600">{link.name}</span>
+                {link.name}
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-green-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
           ))}
         </ul>
 
-        <div className="hidden md:flex gap-4 items-center">
+        {/* Desktop Auth Buttons */}
+        <div className="hidden md:flex gap-5 items-center">
           <Link to="/signin">
             <button
-              className={`cursor-pointer px-5 py-2 rounded-full border font-semibold transition-all duration-300 ${
-                scrolled
+              className={`cursor-pointer px-6 py-2 rounded-full border font-semibold transition-all duration-300 ${
+                scrolled || !isHome
                   ? "border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white"
                   : "border-white text-white hover:bg-white hover:text-gray-800"
               }`}
@@ -73,27 +74,29 @@ const Navbar = () => {
             </button>
           </Link>
           <Link to="/signup">
-            <button className="cursor-pointer px-5 py-2 rounded-full font-semibold text-white bg-green-600 transition-all duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700">
+            <button className="cursor-pointer px-6 py-2 rounded-full font-semibold text-white bg-green-600 transition-all duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700">
               Sign Up
             </button>
           </Link>
         </div>
 
-      
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
           className={`md:hidden transition-colors duration-300 ${
-            scrolled ? "text-gray-700" : "text-white"
+            scrolled || !isHome ? "text-gray-700" : "text-white"
           }`}
         >
           {open ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
 
-     
+      {/* Mobile Dropdown */}
       <div
-        className={`md:hidden fixed top-16 left-0 w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-          open ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0 pointer-events-none"
+        className={`md:hidden fixed top-20 left-0 right-0 mx-4 bg-white shadow-2xl rounded-2xl transform transition-all duration-300 ease-in-out ${
+          open
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-3 opacity-0 pointer-events-none"
         }`}
       >
         <ul className="flex flex-col gap-5 px-6 py-6 text-gray-700 font-medium text-lg">
