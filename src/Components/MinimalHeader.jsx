@@ -8,7 +8,8 @@ const MinimalHeader = () => {
   const isSignInPage = location.pathname === "/signin"; 
 
   return (
-    <header className="relative flex items-center justify-between w-full p-4 bg-white shadow-md sticky top-0 z-50">
+    <header className="sticky top-0 z-50 bg-white shadow-md p-4 flex items-center justify-between w-full">
+
       {/* Brand on Left */}
       <Link
         to="/"
