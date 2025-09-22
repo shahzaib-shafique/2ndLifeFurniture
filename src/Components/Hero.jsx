@@ -1,9 +1,9 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom"; // ✅ import
+import { useNavigate } from "react-router-dom"; 
 
 const Hero = () => {
-  const navigate = useNavigate(); // ✅ hook
+  const navigate = useNavigate(); 
 
   return (
     <section
@@ -28,7 +28,7 @@ const Hero = () => {
 
         <div className="mt-10 flex justify-center">
           <button
-            onClick={() => navigate("/signin")} // ✅ navigate on click
+            onClick={() => navigate("/signin")} 
             className="group cursor-pointer px-10 py-4 bg-green-500 text-white text-lg font-semibold rounded-full shadow-xl hover:bg-green-600 hover:scale-105 transition-all duration-300 flex items-center gap-3"
           >
             Get Started

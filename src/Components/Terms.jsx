@@ -3,7 +3,7 @@ import MinimalHeader from "./MinimalHeader";
 
 const Terms = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 mt-">
       <MinimalHeader />
 
       <div className="bg-gradient-to-r from-green-100 to-green-50 py-12 text-center shadow-sm">

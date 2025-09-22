@@ -29,7 +29,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
-        {/* Brand */}
+   
         <Link
           to="/"
           className={`text-2xl lg:text-3xl font-extrabold tracking-wide whitespace-nowrap transition-colors duration-300 ${
@@ -39,7 +39,7 @@ const Navbar = () => {
           2nd Life <span className="text-green-600">Furniture</span>
         </Link>
 
-        {/* Desktop Links */}
+      
         <ul className="hidden md:flex items-center gap-12 font-medium">
           {navLinks.map((link) => (
             <li key={link.name}>
@@ -60,7 +60,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Desktop Auth Buttons */}
+   
         <div className="hidden md:flex gap-5 items-center">
           <Link to="/signin">
             <button
@@ -80,7 +80,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+    
         <button
           onClick={() => setOpen(!open)}
           className={`md:hidden transition-colors duration-300 ${
@@ -91,7 +91,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+ 
       <div
         className={`md:hidden fixed top-20 left-0 right-0 mx-4 bg-white shadow-2xl rounded-2xl transform transition-all duration-300 ease-in-out ${
           open

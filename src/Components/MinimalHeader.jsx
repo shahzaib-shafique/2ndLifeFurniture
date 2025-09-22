@@ -10,7 +10,7 @@ const MinimalHeader = () => {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md p-4 flex items-center justify-between w-full">
 
-      {/* Brand on Left */}
+     
       <Link
         to="/"
         className="text-2xl font-extrabold text-gray-800 hover:text-green-600 transition-colors"
@@ -24,7 +24,7 @@ const MinimalHeader = () => {
         </h1>
       )}
 
-      {/* Back Button on Desktop */}
+      
       <div className="hidden sm:block">
         <Link
           to="/"

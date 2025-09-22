@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
   const [animate, setAnimate] = useState(false);
@@ -37,34 +47,37 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 w-full">
-
+    <div className="min-h-screen flex flex-col bg-gray-50 w-full relative">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative w-full py-24 sm:py-28 lg:py-32 bg-gradient-to-r from-green-100 to-green-50 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">
+      <section className="mt-20 relative w-full py-20 lg:py-28 bg-gradient-to-r from-green-100 to-green-50 overflow-hidden">
+       
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1470&q=80')] opacity-15 bg-cover bg-center"></div>
+
+       
+        <div className="relative z-10 max-w-5xl mx-auto text-center px-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">
             Contact <span className="text-green-600">Us</span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-            Have questions or need support? Reach out to our team anytime and we’ll get back to you within 24 hours!
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+            Have questions or need support? Reach out to our team anytime and
+            we’ll get back to you within 24 hours!
           </p>
         </div>
       </section>
 
-      {/* Contact + Info Section */}
-      <section className="flex flex-col lg:flex-row px-4 sm:px-6 md:px-12 lg:px-20 py-12 max-w-screen-xl mx-auto gap-10 lg:gap-20">
-
-        {/* Contact Form */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 items-stretch px-6 py-12 max-w-6xl mx-auto gap-12">
         <form
           onSubmit={handleSubmit}
-          className={`bg-white rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10 w-full flex-1 space-y-6 transform transition-all duration-700 ease-out
-            ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+          className={`flex flex-col h-full lg:max-h-[750px] overflow-y-auto bg-white rounded-3xl shadow-2xl p-8 space-y-8 transform transition-all duration-700 ease-out
+            ${
+              animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }
           `}
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-6">Send Us a Message</h2>
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
+            Send Us a Message
+          </h2>
 
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1">
@@ -75,10 +88,14 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Name"
                 className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-4 transition-all duration-300 ${
-                  errors.name ? "border-red-500 focus:ring-red-300" : "border-gray-300 focus:ring-green-300"
+                  errors.name
+                    ? "border-red-500 focus:ring-red-300"
+                    : "border-gray-300 focus:ring-green-300"
                 }`}
               />
-              {errors.name && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>}
+              {errors.name && (
+                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              )}
             </div>
 
             <div className="flex-1">
@@ -89,10 +106,14 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Email"
                 className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-4 transition-all duration-300 ${
-                  errors.email ? "border-red-500 focus:ring-red-300" : "border-gray-300 focus:ring-green-300"
+                  errors.email
+                    ? "border-red-500 focus:ring-red-300"
+                    : "border-gray-300 focus:ring-green-300"
                 }`}
               />
-              {errors.email && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
             </div>
           </div>
 
@@ -103,7 +124,9 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Subject"
             className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-4 transition-all duration-300 ${
-              errors.subject ? "border-red-500 focus:ring-red-300" : "border-gray-300 focus:ring-green-300"
+              errors.subject
+                ? "border-red-500 focus:ring-red-300"
+                : "border-gray-300 focus:ring-green-300"
             }`}
           />
 
@@ -114,53 +137,93 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Message"
             className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-4 resize-none transition-all duration-300 ${
-              errors.message ? "border-red-500 focus:ring-red-300" : "border-gray-300 focus:ring-green-300"
+              errors.message
+                ? "border-red-500 focus:ring-red-300"
+                : "border-gray-300 focus:ring-green-300"
             }`}
           />
-          {errors.message && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.message}</p>}
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+          )}
 
           <button
             type="submit"
-            className="cursor-pointer w-full py-3 sm:py-4 bg-green-600 text-white font-semibold rounded-full shadow-lg hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700 transition-all duration-300"
+            className="cursor-pointer w-full py-3 bg-green-600 text-white font-semibold rounded-full shadow-lg hover:bg-green-700 transition-all duration-300"
           >
             Send Message
           </button>
 
-          {success && <p className="text-green-600 font-semibold text-center mt-4 animate-pulse text-sm sm:text-base">Your message has been sent successfully!</p>}
+          {success && (
+            <div className="mt-4 p-3 rounded-lg bg-green-100 text-green-700 text-center font-medium shadow-sm animate-fadeIn">
+              Your message has been sent successfully!
+            </div>
+          )}
         </form>
 
-        {/* Contact Info Panel */}
-        <div className="flex-1 space-y-8">
-          <h2 className="mb-6 sm:mb-8 text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">Contact Information</h2>
+        <div className="flex flex-col h-full space-y-10">
+          <h2 className="text-3xl font-bold text-neutral-900">Contact Info</h2>
 
-          {[{
-            icon: <FaEnvelope className="text-green-500 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
-            title: "Email",
-            lines: ["Furniture2nd@gmail.com", "support@furniture2nd.com"]
-          },{
-            icon: <FaPhoneAlt className="text-green-500 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
-            title: "Phone",
-            lines: ["+92 321 4287047", "Mon-Fri 9am-6pm"]
-          },{
-            icon: <FaMapMarkerAlt className="text-green-500 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
-            title: "Location",
-            lines: ["Lahore, Pakistan", "Remote-first company"]
-          }].map((info, idx) => (
+          {[
+            {
+              icon: <FaEnvelope className="text-green-500 w-7 h-7" />,
+              title: "Email",
+              lines: ["Furniture2nd@gmail.com", "support@furniture2nd.com"],
+            },
+            {
+              icon: <FaPhoneAlt className="text-green-500 w-7 h-7" />,
+              title: "Phone",
+              lines: ["+92 321 4287047", "Mon-Fri 9am-6pm"],
+            },
+            {
+              icon: <FaMapMarkerAlt className="text-green-500 w-7 h-7" />,
+              title: "Location",
+              lines: ["Lahore, Pakistan", "Remote-first company"],
+            },
+          ].map((info, idx) => (
             <div key={idx} className="flex items-start space-x-4">
-              <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-green-500/10">
+              <div className="flex items-center justify-center flex-shrink-0 w-14 h-14 rounded-full bg-green-500/10 transition-transform duration-300 hover:scale-110">
                 {info.icon}
               </div>
               <div>
-                <h3 className="mb-1 font-bold text-neutral-900 text-sm sm:text-base lg:text-lg">{info.title}</h3>
+                <h3 className="mb-2 text-xl font-bold text-neutral-900">
+                  {info.title}
+                </h3>
+
                 {info.lines.map((line, i) => (
-                  <p key={i} className="text-neutral-600 text-xs sm:text-sm lg:text-base">{line}</p>
+                  <p key={i} className="text-neutral-700 leading-relaxed ">
+                    {line}
+                  </p>
                 ))}
               </div>
             </div>
           ))}
-        </div>
 
+          <div className="w-full lg:w-[80%] rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13622.123456789!2d74.3436!3d31.5204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904c8d3d8b3c9%3A0xbad5d999!2sLahore%2C%20Pakistan!5e0!3m2!1sen!2s!4v1696523493432!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              title="Lahore Map"
+            ></iframe>
+          </div>
+        </div>
       </section>
+
+      <a
+        href="https://wa.me/923214287047"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-50 flex items-center justify-center hover:scale-110"
+        title="Chat with us on WhatsApp"
+      >
+        <FaWhatsapp className="w-7 h-7" />
+        <span className="absolute right-16 bg-gray-900 text-white text-sm px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+          Chat with us
+        </span>
+      </a>
     </div>
   );
 };
