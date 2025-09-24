@@ -1,11 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MinimalHeader from "./MinimalHeader";
 
 const Terms = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 mt-">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <MinimalHeader />
 
+      {/* Header Section */}
       <div className="bg-gradient-to-r from-green-100 to-green-50 py-12 text-center shadow-sm">
         <h1 className="text-4xl font-extrabold text-gray-800 mb-3">
           Terms & Conditions
@@ -20,21 +22,16 @@ const Terms = () => {
         </p>
       </div>
 
+      {/* Terms Content */}
       <div className="flex-grow px-6 py-12 max-w-4xl mx-auto space-y-12">
         <section>
           <h2 className="text-2xl font-semibold text-gray-800 mb-3">
             1. Account Responsibilities
           </h2>
           <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
-            <li>
-              Provide accurate, complete, and up-to-date information when
-              registering.
-            </li>
+            <li>Provide accurate, complete, and up-to-date information when registering.</li>
             <li>Keep your account credentials safe and confidential.</li>
-            <li>
-              Notify us immediately if you suspect unauthorized access to your
-              account.
-            </li>
+            <li>Notify us immediately if you suspect unauthorized access to your account.</li>
           </ul>
         </section>
 
@@ -46,10 +43,7 @@ const Terms = () => {
             <li>Only second-hand furniture items are allowed to be listed.</li>
             <li>Include accurate descriptions and real images of the items.</li>
             <li>No fake, duplicate, or misleading listings are allowed.</li>
-            <li>
-              Sellers are responsible for arranging delivery or pickup with
-              buyers.
-            </li>
+            <li>Sellers are responsible for arranging delivery or pickup with buyers.</li>
           </ul>
         </section>
 
@@ -60,10 +54,7 @@ const Terms = () => {
           <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
             <li>Communicate respectfully and honestly with sellers.</li>
             <li>Inspect items carefully before making payment or purchase.</li>
-            <li>
-              We are not responsible for the quality, condition, or delivery of
-              items purchased.
-            </li>
+            <li>We are not responsible for the quality, condition, or delivery of items purchased.</li>
           </ul>
         </section>
 
@@ -83,13 +74,10 @@ const Terms = () => {
             5. Platform Liability
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            <span className="font-medium text-green-700">
-              Second Life Furniture
-            </span>
-            is a listing platform only. We are not involved in the actual
-            transaction between buyers and sellers and do not guarantee the
-            quality, safety, or legality of listed items. Any disputes must be
-            resolved directly between the buyer and seller.
+            <span className="font-medium text-green-700">Second Life Furniture</span> is a listing platform only.
+            We are not involved in the actual transaction between buyers and sellers and do not guarantee
+            the quality, safety, or legality of listed items. Any disputes must be resolved directly between
+            the buyer and seller.
           </p>
         </section>
 
@@ -98,15 +86,25 @@ const Terms = () => {
             6. Termination of Accounts
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            We reserve the right to suspend or terminate your account at any
-            time if you violate these Terms or engage in fraudulent or harmful
-            activities.
+            We reserve the right to suspend or terminate your account at any time if you violate these Terms
+            or engage in fraudulent or harmful activities.
           </p>
         </section>
 
+        {/* Last Updated */}
         <p className="text-gray-500 text-sm text-center pt-6">
-          Last updated: September 2025
+          Last updated: September 2019
         </p>
+
+        {/* Back to Sign Up Button */}
+        <div className="text-center pt-4">
+          <Link
+            to="/signup"
+            className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition-all"
+          >
+            Back to Sign Up
+          </Link>
+        </div>
       </div>
     </div>
   );

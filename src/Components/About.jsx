@@ -14,17 +14,17 @@ const faqs = [
   {
     question: "What is Second Life Furniture?",
     answer:
-      "Second Life Furniture is a platform where you can buy and sell pre-loved furniture with trust, affordability, and style.",
+      "Second Life Furniture is a platform where you can buy and sell pre loved furniture with trust, affordability, and style.",
   },
   {
     question: "Is the furniture inspected before listing?",
     answer:
-      "Yes! Every item is reviewed to ensure it meets our quality standards before being available for purchase.",
+      "Yes, Every item is reviewed to ensure it meets our quality standards before being available for purchase.",
   },
   {
     question: "Do you provide delivery services?",
     answer:
-      "We connect you with trusted delivery partners for hassle-free pickup and drop-off at affordable rates.",
+      "We connect you with trusted delivery partners for hassle free pickup and drop off at affordable rates.",
   },
   {
     question: "How do I sell my furniture?",
@@ -51,8 +51,8 @@ const About = () => {
             About <span className="text-green-600">Second Life Furniture</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            Giving your furniture a second life since 2025 — affordable,
-            sustainable, and stress-free.
+            Giving your furniture a second life since 2019 affordable,
+            sustainable, and stress free
           </p>
         </div>
       </section>
@@ -77,7 +77,7 @@ const About = () => {
                 Second Life Furniture
               </span>
               , we believe every piece of furniture deserves a second chance.
-              Our mission goes beyond just buying and selling — it’s about
+              Our mission goes beyond just buying and selling it’s about
               reducing waste, supporting affordability, and building a community
               where people can furnish their homes in a smarter and eco-friendly
               way.
@@ -129,7 +129,7 @@ const About = () => {
             {
               icon: <Users className="w-8 h-8 text-purple-500" />,
               title: "Convenience",
-              desc: "Making the furniture buying and selling process simple, fast, and hassle-free.",
+              desc: "Making the furniture buying and selling process simple, fast, and hassle free.",
               bg: "bg-purple-100",
             },
             {

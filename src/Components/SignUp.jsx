@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { Eye, EyeOff, User, Mail, Lock, UserCircle } from "lucide-react";
 import MinimalHeader from "./MinimalHeader";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const navigate = useNavigate();
+
+     const handleSignUp = (e) => {
+    e.preventDefault();
+    // Add signup logic here
+    navigate("/buy-sell"); // ← Navigate to BuySell page
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -17,7 +24,7 @@ const SignUp = () => {
             Create a New Account
           </h2>
 
-          <form className="space-y-4">
+          <form className="space-y-4"  onSubmit={handleSignUp}>
             <div className="relative">
               <User className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
               <input

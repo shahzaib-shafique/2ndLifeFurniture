@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react"; 
 import MinimalHeader from "./MinimalHeader";
 
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false); 
+  const navigate = useNavigate(); 
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+   
+    navigate("/buy-sell"); 
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -19,7 +26,7 @@ const SignIn = () => {
           </h2>
 
           
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSignIn}>
       
             <div className="flex items-center border rounded-lg px-3 focus-within:ring-2 focus-within:ring-green-500">
               <Mail className="w-5 h-5 text-gray-400" />

@@ -8,6 +8,9 @@ import ForgotPassword from "./Components/ForgotPassword";
 import Terms from "./Components/Terms";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
+import BuySell from "./Components/BuySell"; // Landing page for buy & sell
+import Buy from "./Components/Buy";         // Buy page with categories & arrivals
+import Sell from "./Components/Sell";       // Sell page with form & preview
 
 const App = () => {
   return (
@@ -22,6 +25,13 @@ const App = () => {
           <Route path="/terms" element={<Terms />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Buy & Sell Landing Page */}
+          <Route path="/buy-sell" element={<BuySell />} />
+
+          {/* Actual Pages */}
+          <Route path="/buy" element={<Buy />} />
+          <Route path="/sell" element={<Sell />} />
         </Routes>
       </main>
       <Footer />

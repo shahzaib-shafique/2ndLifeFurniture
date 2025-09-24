@@ -22,7 +22,7 @@ const Hero = () => {
         </h1>
 
         <p className="mt-5 text-lg md:text-xl text-gray-200 max-w-md mx-auto drop-shadow-md">
-          Buy quality second-hand furniture at affordable prices — or sell yours
+          Buy quality second-hand furniture at affordable prices  or sell yours
           to someone who needs it.
         </p>
 

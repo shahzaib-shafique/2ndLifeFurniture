@@ -61,7 +61,7 @@ const Contact = () => {
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
             Have questions or need support? Reach out to our team anytime and
-            we’ll get back to you within 24 hours!
+            we’ll get back to you within 24 hours
           </p>
         </div>
       </section>
@@ -177,7 +177,7 @@ const Contact = () => {
             {
               icon: <FaMapMarkerAlt className="text-green-500 w-7 h-7" />,
               title: "Location",
-              lines: ["Lahore, Pakistan", "Remote-first company"],
+              lines: ["Lahore, Pakistan", "Visit our Showroom"],
             },
           ].map((info, idx) => (
             <div key={idx} className="flex items-start space-x-4">
