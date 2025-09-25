@@ -11,6 +11,7 @@ import Contact from "./Components/Contact";
 import BuySell from "./Components/BuySell"; // Landing page for buy & sell
 import Buy from "./Components/Buy";         // Buy page with categories & arrivals
 import Sell from "./Components/Sell";       // Sell page with form & preview
+import CategoryPage from "./Components/CategoryPage"; // ✅ new
 
 const App = () => {
   return (
@@ -32,6 +33,9 @@ const App = () => {
           {/* Actual Pages */}
           <Route path="/buy" element={<Buy />} />
           <Route path="/sell" element={<Sell />} />
+
+       
+          <Route path="/category/:id" element={<CategoryPage />} />
         </Routes>
       </main>
       <Footer />

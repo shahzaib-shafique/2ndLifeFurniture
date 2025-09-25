@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import MinimalHeader from "./MinimalHeader";
 import furnitureBuy from "../assets/furniture1.jpg";
 import furnitureSell from "../assets/furniture2.jpeg";
+import { ArrowLeft } from "lucide-react";
 
 const BuySell = () => {
   const navigate = useNavigate();
@@ -105,6 +106,15 @@ const BuySell = () => {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+        <div className="mt-20 mb-10 flex justify-center">
+          <button
+            onClick={() => navigate("/signIn")}
+            className="cursor-pointer flex items-center gap-2 text-green-700 hover:text-green-900 transition"
+          >
+            <ArrowLeft className="w-7 h-7" />
+            <span className="sr-only">Back to Buy/Sell</span>
+          </button>
         </div>
       </section>
     </div>
