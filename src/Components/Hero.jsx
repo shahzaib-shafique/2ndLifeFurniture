@@ -28,7 +28,7 @@ const Hero = () => {
 
         <div className="mt-10 flex justify-center">
           <button
-            onClick={() => navigate("/signin")} 
+            onClick={() => navigate("/signup")} 
             className="group cursor-pointer px-10 py-4 bg-green-500 text-white text-lg font-semibold rounded-full shadow-xl hover:bg-green-600 hover:scale-105 transition-all duration-300 flex items-center gap-3"
           >
             Get Started

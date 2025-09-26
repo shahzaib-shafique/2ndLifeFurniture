@@ -1,3 +1,4 @@
+// src/App.jsx
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
@@ -8,10 +9,10 @@ import ForgotPassword from "./Components/ForgotPassword";
 import Terms from "./Components/Terms";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
-import BuySell from "./Components/BuySell"; // Landing page for buy & sell
-import Buy from "./Components/Buy";         // Buy page with categories & arrivals
-import Sell from "./Components/Sell";       // Sell page with form & preview
-import CategoryPage from "./Components/CategoryPage"; // ✅ new
+import BuySell from "./Components/BuySell";
+import Buy from "./Components/Buy";
+import Sell from "./Components/Sell";
+import CategoryPage from "./Components/CategoryPage";
 
 const App = () => {
   return (
@@ -26,16 +27,13 @@ const App = () => {
           <Route path="/terms" element={<Terms />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          
-          {/* Buy & Sell Landing Page */}
-          <Route path="/buy-sell" element={<BuySell />} />
 
-          {/* Actual Pages */}
+          <Route path="/buy-sell" element={<BuySell />} />
           <Route path="/buy" element={<Buy />} />
           <Route path="/sell" element={<Sell />} />
 
-       
           <Route path="/category/:id" element={<CategoryPage />} />
+         
         </Routes>
       </main>
       <Footer />

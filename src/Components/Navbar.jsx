@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/";
 
   const navLinks = [
@@ -29,7 +30,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
-   
+        {/* Logo */}
         <Link
           to="/"
           className={`text-2xl lg:text-3xl font-extrabold tracking-wide whitespace-nowrap transition-colors duration-300 ${
@@ -39,7 +40,7 @@ const Navbar = () => {
           2nd Life <span className="text-green-600">Furniture</span>
         </Link>
 
-      
+        {/* Desktop Nav Links */}
         <ul className="hidden md:flex items-center gap-12 font-medium">
           {navLinks.map((link) => (
             <li key={link.name}>
@@ -60,27 +61,17 @@ const Navbar = () => {
           ))}
         </ul>
 
-   
-        <div className="hidden md:flex gap-5 items-center">
-          <Link to="/signin">
-            <button
-              className={`cursor-pointer px-6 py-2 rounded-full border font-semibold transition-all duration-300 ${
-                scrolled || !isHome
-                  ? "border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-gray-800"
-              }`}
-            >
-              Sign In
-            </button>
-          </Link>
-          <Link to="/signup">
-            <button className="cursor-pointer px-6 py-2 rounded-full font-semibold text-white bg-green-600 transition-all duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700">
-              Sign Up
-            </button>
-          </Link>
+        {/* Desktop CTA Button */}
+        <div className="hidden md:flex items-center">
+          <button
+            onClick={() => navigate("/signup")}
+            className="cursor-pointer px-6 py-2 rounded-full font-semibold text-white bg-green-600 transition-all duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700"
+          >
+            Go to Marketplace
+          </button>
         </div>
 
-    
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
           className={`md:hidden transition-colors duration-300 ${
@@ -91,7 +82,7 @@ const Navbar = () => {
         </button>
       </div>
 
- 
+      {/* Mobile Dropdown */}
       <div
         className={`md:hidden fixed top-20 left-0 right-0 mx-4 bg-white shadow-2xl rounded-2xl transform transition-all duration-300 ease-in-out ${
           open
@@ -116,17 +107,17 @@ const Navbar = () => {
             </li>
           ))}
 
-          <div className="flex flex-col gap-2 pt-4">
-            <Link to="/signin" onClick={handleLinkClick}>
-              <button className="w-full px-5 py-2 border border-gray-800 text-gray-800 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition-all">
-                Sign In
-              </button>
-            </Link>
-            <Link to="/signup" onClick={handleLinkClick}>
-              <button className="w-full px-5 py-2 rounded-full font-semibold bg-green-600 text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700 transition-all">
-                Sign Up
-              </button>
-            </Link>
+          {/* Mobile CTA Button */}
+          <div className="pt-4">
+            <button
+              onClick={() => {
+                handleLinkClick();
+                navigate("/signup");
+              }}
+              className="w-full px-5 py-2 rounded-full font-semibold bg-green-600 text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700 transition-all"
+            >
+              Go to Marketplace
+            </button>
           </div>
         </ul>
       </div>

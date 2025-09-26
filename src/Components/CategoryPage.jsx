@@ -147,7 +147,9 @@ const CategoryPage = () => {
                         : "bg-white cursor-pointer hover:shadow-xl"
                     }`}
                     whileHover={!isComingSoon ? { scale: 1.05 } : {}}
-                    onClick={() => !isComingSoon && alert(`Clicked ${sub.title}`)}
+                    onClick={() =>
+                      !isComingSoon && navigate(`/category/${id}/${sub.id}`)
+                    }
                   >
                     {/* Image with blur effect if coming soon */}
                     <img
